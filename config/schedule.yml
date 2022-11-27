@@ -1,0 +1,3 @@
+messages_runner_job:
+  cron: '*/10 * * * * *'
+  class: 'Messages::EnqueuerWorker'
