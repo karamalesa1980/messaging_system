@@ -8,9 +8,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -29,8 +27,12 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 gem 'httparty'
-gem "redis"
+
+gem 'enumerize'
+
+gem 'redis'
 gem 'sidekiq', '~> 6.5', '>= 6.5.8'
+
 gem 'sidekiq-cron'
 gem 'sidekiq-throttled'
 
@@ -56,6 +58,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "pry"
+  gem 'rspec-rails'
 end
 
 group :development do

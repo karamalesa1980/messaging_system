@@ -3,7 +3,7 @@ module Messages
     include Sidekiq::Worker
 
     def perform
-      request_count = rand(1..5)
+      request_count = Rails.application.secrets.request_count
       request_count.times do
         SendingMessageWorker.perform_async
       end

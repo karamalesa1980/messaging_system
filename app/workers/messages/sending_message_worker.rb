@@ -8,7 +8,7 @@ module Messages
     sidekiq_throttle(
       threshold: {
         limit: 100,
-        period: 1.hour
+        period: Rails.application.secrets.interval_of_request.second
       }
     )
 
