@@ -1,24 +1,30 @@
-# README
+# Задача
+Создать систему публикации сообщений. Сообщения должны генерироваться по расписанию, длительность создания каждого сообщения - случайная величина, причем необходимо предусмотреть возможность задания интервала в секундах и количества сообщений (для простоты задавать при запуске).
+Доставка сообщений - HTTP-запрос на заданный адрес.
+Необходимо предусмотреть логирование создания, отправки и доставки сообщений.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Установка
 
-Things you may want to cover:
+```bash
+git clone https://github.com/karamalesa1980/messaging_system.git
+cd messaging_system
 
-* Ruby version
+# Установка зависимостей
+bundle i
 
-* System dependencies
+# Подготовка базы данных
+bundle exec rake db:create
+bundle exec rake db:migrate
 
-* Configuration
+# Запуска сервера
+bundle exec rails s
 
-* Database creation
+# Запуска фоновых задач
+bundle exec sidekiq
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Как запустить тесты?
+Используются тесты RSpec
+```bash
+bundle exec rspec
+```
